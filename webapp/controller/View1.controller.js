@@ -37,6 +37,10 @@ function (Controller, formatter, Filter, FilterOperator) {
        // this.byId("SF").bindElement("/EmpSet('"+empid+"')");
       this.getOwnerComponent().getRouter().navTo("RouteView2",{key:empid});
      
+        },
+        onCreate: function() {
+     this.getOwnerComponent().getRouter().navTo("RouteView3");
+
         }
 
     });

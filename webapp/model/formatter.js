@@ -37,6 +37,21 @@ function () {
             }, sap.ui.getCore().getConfiguration().getLocale());
 
             return oDateFormat.format(EndDate);
+},
+     formatDate3: function (Begindate) {
+    if (!Begindate) {
+        return "";
+    }
+
+    var oDate = (Begindate instanceof Date) ? Begindate : new Date(Begindate);
+
+    var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({
+        pattern: "yyyy-MM-dd'T'HH:mm:ss"
+    });
+
+    return oDateFormat.format(oDate);
+
+
 }
     
     };

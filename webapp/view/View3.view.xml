@@ -1,0 +1,59 @@
+<mvc:View
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+	xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project4.controller.View3"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	>
+	<Page id="page3" title="Create Employee View3" showNavButton="true" navButtonPress="onBack">
+		<content>
+ <f:SimpleForm title="Enter Employee Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
+																											emptySpanM="6">
+				<f:content>
+				<Label text="Employee ID"></Label>
+				<Input id="Empid"></Input>
+
+				<Label text="Employee Name"></Label>
+				<Input id="Empname"></Input>
+
+                <Label text="City"></Label>
+				<Input id="City"></Input>
+
+				<Label text="Country"></Label>
+				<Input id="Country"></Input>
+
+                <Label text="Salary"></Label>
+				<Input id="Salary"></Input>
+
+				<Label text="Currency"></Label>
+				<Input id="Currency"></Input>
+
+                <Label text="Status"></Label>
+				<Input id="Status"></Input>
+
+				<Label text="Begin Date"></Label>
+                <DatePicker id="Begindate"></DatePicker>
+	
+
+                <Label text="Phone number"></Label>
+				<Input id="Phonenumber"></Input>
+
+				<Label text="Email ID"></Label>
+				<Input id="Mailid"></Input>
+                	
+			<FlexBox justifyContent="End">
+					
+			</FlexBox>
+			</f:content>
+			</f:SimpleForm>
+		
+		</content>
+		<footer>
+			<Bar >
+				<contentRight>
+                <Button text="Submit" type="Accept" icon="sap-icon://save" press="onSave"></Button>		
+                </contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

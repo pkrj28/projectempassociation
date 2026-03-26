@@ -26,6 +26,8 @@
 				<headerToolbar>
 					<Toolbar design="Solid">
 						<Title text="Travel Data for PJ"></Title>
+						<ToolbarSpacer ></ToolbarSpacer>
+						<Button text="Create" type="Emphasized" press="onCreate" ></Button>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
