@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: com.pjnamespace.project4
+type: application
+framework:
+  name: SAPUI5
+  version: 1.146.0
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.ushell
+    - name: themelib_sap_horizon
+server:
+  customMiddleware:
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        flp:
+          theme: sap_horizon
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertErrors: false
+        backend:
+          - url: https://87073b08-232b-42f9-ae7c-bc59cf2ae025.abap.us10.hana.ondemand.com/
+            destination: abap-cloud-abap-8cb019a1trial-dev
+            path: /sap
+          - url: http://s4h2023.demo23.com:8022
+            client: '800'
+            destination: S4
+            path: /sap/opu/odata/sap/ZEMPDATA_SRV/
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZEMPDATA_SRV
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations: []

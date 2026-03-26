@@ -1,0 +1,43 @@
+<mvc:View
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+	xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project4.controller.View2"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	>
+	<Page id="page1" title="I am Object page for Travel">
+		<content>
+			<ObjectHeader id="objhead" title="{TravelId}" number="{AgencyId}" numberUnit="INR" >
+				<attributes>
+					<ObjectAttribute title="Description" text="{Description}" />
+					<ObjectAttribute title="Agency Id" text="{AgencyId}"></ObjectAttribute>
+				</attributes>
+				<statuses>
+					<ObjectStatus text="{Status}"></ObjectStatus>
+				</statuses>
+			</ObjectHeader>
+			<IconTabBar >
+				<items>
+					<IconTabFilter icon="sap-icon://information" >
+						<f:SimpleForm id="SF" editable="false" >
+							<f:content>
+								<Label text="Travel Id"></Label>
+								<Text text="{TravelId}" id="1" ></Text>
+								<Label text="Customer ID"></Label>
+								<Text text="{CustomerId}" id="2"></Text>
+								<Label text="Status"></Label>
+								<Text text="{Status}" id="3"></Text>
+								<Label text="Begin Date"></Label>
+								<Text text="{path:'BeginDate',formatter:'.f.formatDate'}"/>		
+								<Label text="End Date"></Label>
+								<Text text="{path:'EndDate',formatter:'.f.formatDate1'}"/>			
+								<Label text="Description"></Label>
+								<Text text="{Description}" id="6"></Text>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

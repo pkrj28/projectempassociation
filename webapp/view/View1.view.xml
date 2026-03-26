@@ -1,0 +1,88 @@
+<mvc:View
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+	xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project4.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	>
+	<Page id="page" title="{i18n>title}">
+		<content>
+		<Panel expandable="true" expanded="true">
+			<f:SimpleForm title="Travel Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
+																											emptySpanM="6">
+				<f:content>
+				<Label text="Emp ID"></Label>
+				<Input id="customer"></Input>
+				<Label text="Emp Name"></Label>
+				<Input id="agency"></Input>
+				<FlexBox justifyContent="End">
+				<Button text="Go" type="Accept" icon="sap-icon://accept" press="onGo"></Button>
+				<Button text="Reset" type="Reject" icon="sap-icon://reject" press="onReset"></Button>
+			</FlexBox>
+			</f:content>
+			</f:SimpleForm>
+            </Panel>
+			<Table items="{/EmpSet}" class="sapUitinyMarginTop" id="table">
+				<headerToolbar>
+					<Toolbar design="Solid">
+						<Title text="Travel Data for PJ"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Emp ID"></Text>
+					</Column>
+					<Column>
+						<Text text="Emp Name"></Text>
+					</Column>
+					<Column>
+						<Text text="City"></Text>
+					</Column>
+					<Column>
+						<Text text="Country"></Text>
+					</Column>
+					<Column>
+						<Text text="Salary"></Text>
+					</Column>
+					<Column>
+						<Text text="Currency"></Text>
+					</Column>
+					<Column>
+						<Text text="Status"></Text>
+					</Column>
+                    <Column>
+						<Text text="Begin Date"></Text>
+					</Column>
+                    <Column>
+						<Text text="Phone Number"></Text>
+					</Column>
+                    <Column>
+						<Text text="Email ID"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onpressrow">
+						<cells>
+							<Text text="{Empid}"/>
+							<Text text="{Empname}"/>
+							<Text text="{City}"/>
+                            <Text text="{Country}"/>
+                            <Text text="{Salary}"/>
+                            <Text text="{Zcurrency}"/>
+                            <Text text="{Status}"/>			
+							<Text text="{path:'Begindate',formatter:'.f.formatDate'}"/>			
+							<Text text="{Phonenumber}"/>
+							<Text text="{Mailid}"/>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		
+		</content>
+		<footer>
+			<Bar >
+				<contentRight></contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
