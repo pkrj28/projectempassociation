@@ -18,15 +18,15 @@ function () {
         }
         },
 
-        formatDate: function (BeginDate) {
-            if (!BeginDate) {
+        formatDate: function (Begindate) {
+            if (!Begindate) {
                 return "";
             }
             var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
                 pattern: "dd-MM-yyyy"
             }, sap.ui.getCore().getConfiguration().getLocale());
 
-            return oDateFormat.format(BeginDate);
+            return oDateFormat.format(Begindate);
 },
         formatDate1: function (EndDate) {
             if (!EndDate) {

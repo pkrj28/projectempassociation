@@ -22,20 +22,20 @@ function (Controller, formatter, Filter, FilterOperator) {
 
         onGo: function () {
             var aFilter = [];
-            var customer = this.byId("customer").getValue();
-            if (customer !== "") {
-                aFilter.push(new Filter("CustomerId", "EQ", customer));
+            var empid = this.byId("empid").getValue();
+            if (empid !== "") {
+                aFilter.push(new Filter("Empid", "EQ", empid));
             }
             this.byId("table").getBinding("items").filter(aFilter)            
         },
         onReset: function () {
-            this.byId("customer").setValue("");
-            this.byId("agency").setValue("");
+            this.byId("empid").setValue("");
+            this.byId("empname").setValue("");
         },
         onpressrow: function(oEvent) {
-        var Traid = oEvent.getSource().getBindingContext().getProperty("TravelId");
-       // this.byId("SF").bindElement("/Travel('"+Traid+"')");
-      this.getOwnerComponent().getRouter().navTo("RouteView2",{key:Traid});
+        var empid = oEvent.getSource().getBindingContext().getProperty("Empid");
+       // this.byId("SF").bindElement("/EmpSet('"+empid+"')");
+      this.getOwnerComponent().getRouter().navTo("RouteView2",{key:empid});
      
         }
 

@@ -18,9 +18,9 @@ function (Controller, formatter, Filter, FilterOperator) {
         },
         onPatternMatched: function(oEvent) {
 
-        var Traid = oEvent.getParameter("arguments").key;
-           this.byId("SF").bindElement("/Travel('"+Traid+"')");
-             this.byId("objhead").bindElement("/Travel('"+Traid+"')");
+        var Empid = oEvent.getParameter("arguments").key;
+           this.byId("SF").bindElement("/EmpSet('"+Empid+"')");
+             this.byId("objhead").bindElement("/EmpSet('"+Empid+"')");
 
         }
  

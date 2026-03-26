@@ -5,12 +5,12 @@
 	xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form"
 	>
-	<Page id="page1" title="I am Object page for Travel">
+	<Page id="page1" title="I am Object page for Employee">
 		<content>
-			<ObjectHeader id="objhead" title="{TravelId}" number="{AgencyId}" numberUnit="INR" >
+			<ObjectHeader id="objhead" title="{Empname}" number="{Salary}" numberUnit="{Zcurrency}" >
 				<attributes>
-					<ObjectAttribute title="Description" text="{Description}" />
-					<ObjectAttribute title="Agency Id" text="{AgencyId}"></ObjectAttribute>
+					<ObjectAttribute title="Empployee ID" text="{Empid}" />
+					<ObjectAttribute title="Email" text="{Mailid}"></ObjectAttribute>
 				</attributes>
 				<statuses>
 					<ObjectStatus text="{Status}"></ObjectStatus>
@@ -21,18 +21,24 @@
 					<IconTabFilter icon="sap-icon://information" >
 						<f:SimpleForm id="SF" editable="false" >
 							<f:content>
-								<Label text="Travel Id"></Label>
-								<Text text="{TravelId}" id="1" ></Text>
-								<Label text="Customer ID"></Label>
-								<Text text="{CustomerId}" id="2"></Text>
-								<Label text="Status"></Label>
-								<Text text="{Status}" id="3"></Text>
+								<Label text="Emp Id"></Label>
+								<Text text="{Empid}" id="1" ></Text>
+								<Label text="Emp Name"></Label>
+								<Text text="{Empname}" id="2"></Text>
+								<Label text="City"></Label>
+								<Text text="{City}" id="3"></Text>
 								<Label text="Begin Date"></Label>
-								<Text text="{path:'BeginDate',formatter:'.f.formatDate'}"/>		
-								<Label text="End Date"></Label>
-								<Text text="{path:'EndDate',formatter:'.f.formatDate1'}"/>			
-								<Label text="Description"></Label>
-								<Text text="{Description}" id="6"></Text>
+								<Text text="{path:'Begindate',formatter:'.f.formatDate'}"/>		
+								<Label text="Country"></Label>
+								<Text text="{Country}"/>			
+								<Label text="Salary"></Label>
+								<Text text="{Salary}" id="6"></Text>
+								<Label text="Currency"></Label>
+								<Text text="{Zcurrency}" id="7"></Text>
+								<Label text="Phone"></Label>
+								<Text text="{Phonenumber}" id="8"></Text>
+								<Label text="Email"></Label>
+								<Text text="{Mailid}" id="9"></Text>
 							</f:content>
 						</f:SimpleForm>
 					</IconTabFilter>

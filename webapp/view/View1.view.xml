@@ -8,13 +8,13 @@
 	<Page id="page" title="{i18n>title}">
 		<content>
 		<Panel expandable="true" expanded="true">
-			<f:SimpleForm title="Travel Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
+			<f:SimpleForm title="Employee Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
 																											emptySpanM="6">
 				<f:content>
 				<Label text="Emp ID"></Label>
-				<Input id="customer"></Input>
+				<Input id="empid"></Input>
 				<Label text="Emp Name"></Label>
-				<Input id="agency"></Input>
+				<Input id="empname"></Input>
 				<FlexBox justifyContent="End">
 				<Button text="Go" type="Accept" icon="sap-icon://accept" press="onGo"></Button>
 				<Button text="Reset" type="Reject" icon="sap-icon://reject" press="onReset"></Button>
