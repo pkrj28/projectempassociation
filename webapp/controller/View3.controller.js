@@ -28,6 +28,8 @@ function (Controller, formatter, Filter, FilterOperator) {
     var Mailid = this.byId("Mailid").getValue();
 
    Begindate = formatter.formatDate3(Begindate);
+   if (!Begindate)
+   { Begindate = "2026-03-11T00:00:00"}
 
     if (!Empid || !Empname) {
         sap.m.MessageToast.show("Employee ID and Name are required");
@@ -50,11 +52,13 @@ function (Controller, formatter, Filter, FilterOperator) {
     var oModel = this.getOwnerComponent().getModel();
 
     oModel.create("/EmpSet", Payload, {
-        success: function (req,res) {
-            sap.m.MessageToast.show("Employee created successfully");
+        success: function (ereq,eres) {
+          // MessageBox.success("Employee created successfully-" );
+          sap.m.MessageToast.show("Employee created successfully-"+eres.data.Empid);
         },
         error: function () {
-            sap.m.MessageBox.error("Error creating employee");
+           // MessageBox.error("Error creating employee");
+           sap.m.MessageBox.error("Error creating employee");
         }
     });
 }
