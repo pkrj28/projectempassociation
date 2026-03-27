@@ -109,6 +109,13 @@
           "target": [
             "TargetView3"
           ]
+        },
+        {
+          "name": "RouteView4",
+          "pattern": "fourthview/{key}",
+          "target": [
+            "TargetView4"
+          ]
         }
       ],
       "targets": {
@@ -123,6 +130,10 @@
          "TargetView3": {
           "id": "View3",
           "name": "View3"
+        },
+         "TargetView4": {
+          "id": "View4",
+          "name": "View4"
         }
       }
     },

@@ -1,0 +1,59 @@
+<mvc:View
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+	xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project4.controller.View4"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	>
+	<Page id="page4" title="Edit Employee View4" showNavButton="true" navButtonPress="onBack">
+		<content>
+ <f:SimpleForm id="SF1" title="Update Employee Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
+																											emptySpanM="6">
+				<f:content>
+		         <Label text="Employee id"></Label>
+			     <Input id="Empid1" value="{Empid}"></Input>
+
+				<Label text="Employee Name"></Label>
+			     <Input id="Empname1" value="{Empname}"></Input>
+
+                <Label text="City"></Label>
+				<Input id="City1" value="{City}"></Input>
+
+				<Label text="Country"></Label>
+				<Input id="Country1" value="{Country}"></Input>
+
+                <Label text="Salary"></Label>
+				<Input id="Salary1" value="{Salary}"></Input>
+
+				<Label text="Currency"></Label>
+				<Input id="Currency1" value="{Zcurrency}"></Input>
+
+                <Label text="Status"></Label>
+				<Input id="Status1" value="{Status}"></Input>
+
+				<Label text="Begin Date"></Label>
+                <DatePicker id="Begindate1" value="{Begindate}"></DatePicker>
+	
+
+                <Label text="Phone number"></Label>
+				<Input id="Phonenumber1" value="{Phonenumber}"></Input>
+
+				<Label text="Email ID"></Label>
+				<Input id="Mailid1" value="{Mailid}"></Input> 
+       
+			<FlexBox justifyContent="End">
+					
+			</FlexBox>
+			</f:content>
+			</f:SimpleForm>
+		
+		</content>
+		<footer>
+			<Bar >
+				<contentRight>
+                <Button text="Update" type="Accept" icon="sap-icon://save" press="onSave"></Button>		
+                </contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

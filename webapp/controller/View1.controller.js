@@ -41,6 +41,25 @@ function (Controller, formatter, Filter, FilterOperator) {
         onCreate: function() {
      this.getOwnerComponent().getRouter().navTo("RouteView3");
 
+        },
+         onUpdate: function() {
+          var empid = this.byId("table").getSelectedItem().getBindingContext().getProperty("Empid");
+
+         this.getOwnerComponent().getRouter().navTo("RouteView4", {key: empid} );
+
+        },
+         onDelete: function() {
+        var empid = this.byId("table").getSelectedItem().getBindingContext().getProperty("Empid");
+        var oModel = this.getOwnerComponent().getModel();
+
+    oModel.remove("/EmpSet('"+empid+"')",{
+        success: function () {
+           sap.m.MessageToast.show("Employee deleted successfully-");
+        },
+        error: function () {
+       sap.m.MessageBox.error("Error delete employee") }
+    });
+
         }
 
     });
