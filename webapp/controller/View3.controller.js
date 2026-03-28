@@ -8,10 +8,14 @@ function (Controller, formatter, Filter, FilterOperator) {
     return Controller.extend("com.pjnamespace.project4.controller.View1", {
 
         f: formatter,
+    onInit: function () {
+    var projModel = this.getOwnerComponent().getModel("projModel");
 
-        onInit: function () {
-
-        },
+    projModel.setData({
+        aProjects: []
+           
+    });
+},
         onBack: function() {
         history.go(-1);
         },
@@ -46,7 +50,8 @@ function (Controller, formatter, Filter, FilterOperator) {
         Status: Status,
         Begindate: Begindate,
         Phonenumber: Phonenumber,
-        Mailid: Mailid
+        Mailid: Mailid,
+        NavToProject:this.getOwnerComponent().getModel("projModel").getData().aProjects
     };
 
     var oModel = this.getOwnerComponent().getModel();
@@ -61,8 +66,23 @@ function (Controller, formatter, Filter, FilterOperator) {
            sap.m.MessageBox.error("Error creating employee");
         }
     });
-}
+        },Onadd: function() {
+         var projModel = this.getOwnerComponent().getModel("projModel").getData().aProjects.push({
+                Empid: "",
+                Projid: "",
+                Projname: "",
+                Projdes: "",
+                Clientname: ""
 
+         })
+         this.getOwnerComponent().getModel("projModel").refresh(true);
+            
+        },
+        onDelete: function(oEvent){
+        var indexrow = oEvent.getSource().getParent().getBindingContextPath().split("/")[2];
+        this.getOwnerComponent().getModel("projModel").getData().aProjects.splice(indexrow, 1);
+        this.getOwnerComponent().getModel("projModel").refresh(true);
+        }
 
        
     });

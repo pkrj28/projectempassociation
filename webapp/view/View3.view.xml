@@ -46,7 +46,45 @@
 			</FlexBox>
 			</f:content>
 			</f:SimpleForm>
-		
+		<Table items="{projModel>/aProjects}" >
+		<headerToolbar>
+		<Toolbar  >
+		<Title text="Add Project"></Title>
+		<ToolbarSpacer ></ToolbarSpacer>
+		<Button text="Add" icon="sap-icon://add" type="Emphasized" press="Onadd"> </Button>
+		</Toolbar>
+		</headerToolbar>
+		<columns>
+		<Column >
+		<Text text="Employee ID "></Text>	
+		</Column>
+		<Column >
+		<Text text="Project ID "></Text>	
+		</Column>
+		<Column >
+		<Text text="Project Name "></Text>	
+		</Column>
+		<Column >
+		<Text text="Project Descrip "></Text>	
+		</Column>
+		<Column >
+		<Text text="Client Name "></Text>	
+		</Column>
+		<Column >
+		<Text text="Delete "></Text>	
+		</Column>
+		</columns>
+		<items>
+		<ColumnListItem  >
+		<Input value="{projModel>Empid}"></Input>
+		<Input value="{projModel>Projid}"></Input>
+		<Input value="{projModel>Projname}"></Input>
+		<Input value="{projModel>Projdes}"></Input>
+		<Input value="{projModel>Clientname}"></Input>
+		<Button icon="sap-icon://delete" type="Reject" press="onDelete"></Button>
+		</ColumnListItem>
+		</items>
+		</Table>
 		</content>
 		<footer>
 			<Bar >
