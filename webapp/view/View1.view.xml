@@ -30,6 +30,7 @@
 						<Button text="Create" type="Emphasized" press="onCreate" icon="sap-icon://create"></Button>
 						<Button text="Update" type="Reject"  press="onUpdate" icon="sap-icon://edit" ></Button>
 						<Button text="Delete" type="Negative"  press="onDelete" icon="sap-icon://delete" ></Button>
+						<Button text="Upload File" type="Attention"  press="onFile" icon="sap-icon://upload" ></Button>
 					</Toolbar>
 				</headerToolbar>
 				<columns>

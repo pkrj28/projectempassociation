@@ -1,0 +1,20 @@
+<mvc:View controllerName="com.pjnamespace.project4.controller.View7" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+<App>
+<pages>
+<Page title="upload file">
+<content>
+<u:FileUploader
+  id="fileUploader"
+  name="file"
+  uploadUrl="/sap/opu/odata/sap/ZEMPDATA_SRV/zempfile"
+  change="onFileChange"
+  uploadComplete="onUploadComplete"
+  sendXHR="true"
+  useMultipart="true"
+/>
+</content>
+</Page>
+</pages>
+</App>
+</mvc:View>

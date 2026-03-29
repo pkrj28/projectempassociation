@@ -123,6 +123,13 @@
           "target": [
             "TargetView4"
           ]
+        },
+        {
+          "name": "RouteView7",
+          "pattern": "seventhview",
+          "target": [
+            "TargetView7"
+          ]
         }
       ],
       "targets": {
@@ -141,6 +148,10 @@
          "TargetView4": {
           "id": "View4",
           "name": "View4"
+        },
+        "TargetView7": {
+          "id": "View7",
+          "name": "View7"
         }
       }
     },

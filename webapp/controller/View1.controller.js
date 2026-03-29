@@ -13,7 +13,9 @@ function (Controller, formatter, Filter, FilterOperator) {
 
         onInit: function () {
         },
-
+       onFile: function(){
+      this.getOwnerComponent().getRouter().navTo("RouteView7");
+       },
         onSubmit: function () {
             var select = this.getView().byId("select").getSelectedKey();
             var combo = this.getView().byId("combo").getSelectedKeys();

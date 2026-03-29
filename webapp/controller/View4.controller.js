@@ -52,6 +52,7 @@ function (Controller, formatter, Filter, FilterOperator) {
     oModel.update("/EmpSet('"+Empid+"')", Payload, {
         success: function () {
            sap.m.MessageToast.show("Employee updated successfully-");
+               oModel.refresh(true);
         },
         error: function () {
        sap.m.MessageBox.error("Error uodate employee") }

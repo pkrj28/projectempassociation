@@ -60,6 +60,7 @@ function (Controller, formatter, Filter, FilterOperator) {
         success: function (ereq,eres) {
           // MessageBox.success("Employee created successfully-" );
           sap.m.MessageToast.show("Employee created successfully-"+eres.data.Empid);
+          oModel.refresh(true);
         },
         error: function () {
            // MessageBox.error("Error creating employee");
@@ -82,8 +83,41 @@ function (Controller, formatter, Filter, FilterOperator) {
         var indexrow = oEvent.getSource().getParent().getBindingContextPath().split("/")[2];
         this.getOwnerComponent().getModel("projModel").getData().aProjects.splice(indexrow, 1);
         this.getOwnerComponent().getModel("projModel").refresh(true);
-        }
+        },
+      oncvuploadsap: function () {
+    var oUploadSet = this.byId("Iduploadcv");
+    var empId = this.byId("Empid").getValue();
 
-       
+    // Get incomplete items (files added but not uploaded yet)
+    var aFiles = oUploadSet.getIncompleteItems();
+
+    for (var i = 0; i < aFiles.length; i++) {
+        var fileName = aFiles[i].getFileName();
+
+        // Step 1: create slug parameter EmpId + filename  and Add header field
+        var slug = empId + "-" + fileName;       
+        oUploadSet.addHeaderField(new sap.ui.core.Item({
+            key: "SLUG",
+            text: slug  }));
+        // Step2- Construct X CSRF Token 
+       this.getOwnerComponent().getModel().refreshSecurityToken();
+        oUploadSet.addHeaderField(new sap.ui.core.Item({
+            key: "X-CSRF-Token",
+            text: this.getOwnerComponent().getModel().getSecurityToken() }));
+            oUploadSet.uploadItem(aFiles[i]);
+             oUploadSet.removeAllHeaderFields();
+    }
+},
+onUploadCompleted: function(oEvent) {
+    var status = oEvent.getParameter("status");
+    var filename = oEvent.getParameter("item").getFileName();
+
+    if (status === 201) {
+        sap.m.MessageToast.show("File - " + filename + " uploaded successfully");
+    } else {
+        sap.m.MessageToast.show("File - " + filename + " not uploaded successfully");
+    }
+}
     });
+
 });
