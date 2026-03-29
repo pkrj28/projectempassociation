@@ -19,9 +19,21 @@ function (Controller, formatter, Filter, FilterOperator) {
         onPatternMatched: function(oEvent) {
 
         var Empid = oEvent.getParameter("arguments").key;
-           this.byId("SF").bindElement("/EmpSet('"+Empid+"')");
-             this.byId("objhead").bindElement("/EmpSet('"+Empid+"')");
+         this.getView().bindElement("/EmpSet('"+ Empid +"')");
+        //    this.byId("SF").bindElement("/EmpSet('"+Empid+"')");
+        //      this.byId("objhead").bindElement("/EmpSet('"+Empid+"')");
+    
+      
 
+        },
+        Ondownloadcv : function(oEvent){
+        var empid = this.getView().getBindingContext().getProperty("Empid");
+
+        var filename = oEvent.getSource().getParent().getBindingContext().getProperty("Filename")
+        // oEvent.getSource() = button getParent() = that row , getProperty mean coulmn 
+        var url = "/sap/opu/odata/sap/ZEMPDATA_SRV/resumeSet(Empid='"+empid+"',Filename='"+filename+"')/$value";
+        sap.m.URLHelper.redirect(url,false);
+            
         }
  
 

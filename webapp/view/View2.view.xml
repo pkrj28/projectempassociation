@@ -42,6 +42,30 @@
 							</f:content>
 						</f:SimpleForm>
 					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://attachment" >
+			        <Table items="{Toresume}">
+                   <columns>
+				   <Column >
+				    <Text text="Employee ID"></Text>
+				   </Column>
+				   	   <Column >
+				    <Text text="File Name"></Text>
+				   </Column>
+				 
+				   	   <Column >
+				    <Text text="Download"></Text>
+				   </Column>
+				   </columns>
+                  <items>
+				  <ColumnListItem  >
+				  <Text text="{Empid}"></Text>
+				   <Text text="{Filename}"></Text>
+				   <Button icon="sap-icon://download" type="Reject" press="Ondownloadcv"></Button>
+				  </ColumnListItem>
+				  </items>              
+					</Table>
+						
+					</IconTabFilter>
 				</items>
 			</IconTabBar>
 		</content>
